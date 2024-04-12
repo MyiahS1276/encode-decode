@@ -13,7 +13,7 @@ def encode(ogpass):
         else:
             ecdpass += str(a)
     return ecdpass
- def decode(ecdpass):
+def decode(ecdpass):
     ogpass = ''
     
     for char in ecdpass:
