@@ -13,6 +13,20 @@ def encode(ogpass):
         else:
             ecdpass += str(a)
     return ecdpass
+ def decode(ecdpass):
+    ogpass = ''
+    
+    for char in ecdpass:
+        
+        a = int(char) - 3
+        
+        if a < 0:
+            ogpass += str(a + 10)
+        
+        else:
+            ogpass += str(a)
+    return ogpass
+
 
 def main():
     option = 0
@@ -34,10 +48,16 @@ def main():
                   "")
         # decoder
         elif option == 2:
-            ogpass = decode(ecdpass)
-            print(f"The encoded password is {ecdpass}, and the original password is {ogpass}.\n"
-                  "")
-
+            if ecdpass:
+                ogpass = decode(ecdpass)
+                print(f"The encoded password is {ecdpass}, and the original password is {ogpass}.\n")
+            else:
+                print("No password has been encoded yet.\n")
+        # Exit condition
+        elif option == 3:
+            print("Exiting program.")
+        else:
+            print("Invalid option, please choose again.\n")
 
 if __name__ == '__main__':
     main()
