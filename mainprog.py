@@ -1,3 +1,4 @@
+# Myiah Stubbs
 def encode(ogpass):
     # creating string to put encoded password(ecdpass) result
     ecdpass = ''
